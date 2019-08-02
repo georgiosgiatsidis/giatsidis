@@ -7,12 +7,12 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-
-import "./layout.css"
+import GlobalStyle from './globalStyle';
 
 const Layout = ({ children }) => {
   return (
     <>
+      <GlobalStyle />
       <div
         style={{
           margin: `0 auto`,
