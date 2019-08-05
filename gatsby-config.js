@@ -3,6 +3,16 @@ module.exports = {
     title: `Georgios Giatsidis`,
     description: `Software Engineer`,
     author: `@georgegiatsidis`,
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "page2",
+        link: "page-2"
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
