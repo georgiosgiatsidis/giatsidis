@@ -1,46 +1,38 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 const Navbar = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            menuLinks {
-              name
-              link
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        author
+                        menuLinks {
+                            name
+                            link
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    `
-  )
+        `
+    );
 
-  const { menuLinks } = site.siteMetadata
+    const { menuLinks } = site.siteMetadata;
+    console.log('test');
+    return (
+        <nav>
+            <ul>
+                {menuLinks.map(link => (
+                    <li key={link.name}>
+                        <Link to={link.link}>{link.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+};
 
-  return (
-    <nav>
-      <ul style={{ display: "flex", flex: 1 }}>
-        {menuLinks.map(link => (
-          <li
-            key={link.name}
-            style={{
-              listStyleType: `none`,
-              padding: `1rem`,
-            }}
-          >
-            <Link style={{ color: `white` }} to={link.link}>
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )
-}
-
-export default Navbar
+export default Navbar;
