@@ -2,11 +2,23 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
+const Container = styled.nav`
+    & ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+    }
+`;
+
 const MobileMenu = styled.div`
     display: none;
     text-align: center;
     @media (max-width: ${props => props.size}) {
         display: block;
+    }
+
+    & ul {
+        flex-direction: column;
     }
 `;
 
@@ -74,18 +86,18 @@ const MenuButton = styled.a`
 const Menu = ({ size, children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <>
+        <Container>
             <MobileMenu size={size}>
                 <MenuButton
                     active={isMenuOpen}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    <span></span>
+                    <span />
                 </MenuButton>
                 {isMenuOpen && <div>{children}</div>}
             </MobileMenu>
             <DesktopMenu size={size}>{children}</DesktopMenu>
-        </>
+        </Container>
     );
 };
 

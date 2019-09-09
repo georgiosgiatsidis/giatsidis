@@ -24,17 +24,15 @@ const Navbar = () => {
     const { menuLinks } = site.siteMetadata;
 
     return (
-        <nav>
-            <Menu>
-                <ul>
-                    {menuLinks.map(link => (
-                        <li key={link.name}>
-                            <Link to={link.link}>{link.name}</Link>
-                        </li>
-                    ))}
-                </ul>
-            </Menu>
-        </nav>
+        <Menu>
+            <ul>
+                {menuLinks.map(link => (
+                    <li key={link.name}>
+                        <Link to={link.link}>{link.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </Menu>
     );
 };
 
