@@ -17,13 +17,17 @@
         "gatsby-plugin-react-helmet": "^3.1.21",
         "gatsby-plugin-sharp": "^2.3.13",
         "gatsby-plugin-styled-components": "^3.1.17",
+        "gatsby-plugin-typography": "^2.3.21",
         "gatsby-source-filesystem": "^2.1.46",
         "gatsby-transformer-sharp": "^2.3.12",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "react-helmet": "^5.2.1",
-        "styled-components": "^5.0.0"
+        "react-typography": "^0.16.19",
+        "styled-components": "^5.0.0",
+        "typography": "^0.16.19",
+        "typography-theme-fairy-gates": "^0.16.19"
     },
     "devDependencies": {
         "eslint-plugin-prettier": "^3.1.2",
