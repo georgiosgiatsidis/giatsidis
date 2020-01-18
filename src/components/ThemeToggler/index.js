@@ -42,13 +42,29 @@ const Input = styled.input`
     visibility: hidden;
 `;
 
+const DarkIcon = styled.span`
+    display: block;
+    text-align: left;
+    padding-left: 9px;
+`;
+
+const LightIcon = styled.span`
+    display: block;
+    text-align: right;
+    padding-right: 5px;
+`;
+
 const Toggler = () => (
     <ThemeToggler>
         {({ theme, toggleTheme }) => (
             <>
                 <Wrapper>
-                    <span>☀️</span>
                     <Label checked={theme === 'dark'}>
+                        {theme === 'dark' ? (
+                            <DarkIcon>🌙</DarkIcon>
+                        ) : (
+                            <LightIcon>☀️</LightIcon>
+                        )}
                         <Input
                             type="checkbox"
                             onChange={e =>
@@ -57,7 +73,6 @@ const Toggler = () => (
                             checked={theme === 'dark'}
                         />
                     </Label>
-                    <span>🌙</span>
                 </Wrapper>
             </>
         )}

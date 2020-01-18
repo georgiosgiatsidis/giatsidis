@@ -7,6 +7,10 @@ const Container = styled.nav`
         list-style: none;
         display: flex;
         padding: 0;
+
+        li {
+            margin: 1rem;
+        }
     }
 `;
 
@@ -34,8 +38,6 @@ const MenuButton = styled.a`
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
     position: relative;
 
     & span,
@@ -48,7 +50,7 @@ const MenuButton = styled.a`
         margin-top: -1px;
         width: 20px;
         height: 2px;
-        background-color: #222;
+        background-color: var(--textTitle);
     }
 
     & span::before,
