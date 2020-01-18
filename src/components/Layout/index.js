@@ -5,7 +5,14 @@ import Navbar from '../Navbar';
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <div
+            style={{
+                color: 'var(--textNormal)',
+                background: 'var(--bg)',
+                transition: 'color 0.3s ease-out, background 0.3s ease-out',
+                minHeight: '100vh',
+            }}
+        >
             <GlobalStyle />
             <div
                 style={{
@@ -17,7 +24,7 @@ const Layout = ({ children }) => {
                 <Navbar />
                 <main>{children}</main>
             </div>
-        </>
+        </div>
     );
 };
 
