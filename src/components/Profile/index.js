@@ -51,7 +51,6 @@ const Profile = () => {
                     </p>
                 </Styled.PersonalDetails>
             </Styled.ProfileWrapper>
-            <Image />
         </Styled.Wrapper>
     );
 };
