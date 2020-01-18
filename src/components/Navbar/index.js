@@ -32,8 +32,10 @@ const Navbar = () => {
                         <Link to={link.link}>{link.name}</Link>
                     </li>
                 ))}
+                <li>
+                    <ThemeToggler />
+                </li>
             </ul>
-            <ThemeToggler />
         </Menu>
     );
 };
