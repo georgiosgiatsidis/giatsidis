@@ -24,7 +24,7 @@ body.dark {
     --header: #ffffff;
     --textNormal: rgba(255, 255, 255, 0.88);
     --textTitle: #ffffff;
-    --textLink: var(--pink);
+    --textLink: #8983F7;
     --hr: hsla(0, 0%, 100%, 0.2);
     --inlineCode-bg: rgba(115, 124, 153, 0.2);
     --inlineCode-text: #e6e6e6;
