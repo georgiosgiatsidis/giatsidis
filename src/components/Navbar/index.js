@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import Menu from '../Menu';
+import ThemeToggler from '../ThemeToggler';
 
 const Navbar = () => {
     const { site } = useStaticQuery(
@@ -33,20 +33,7 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
-            <ThemeToggler>
-                {({ theme, toggleTheme }) => (
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={e =>
-                                toggleTheme(e.target.checked ? 'dark' : 'light')
-                            }
-                            checked={theme === 'dark'}
-                        />{' '}
-                        Dark mode
-                    </label>
-                )}
-            </ThemeToggler>
+            <ThemeToggler />
         </Menu>
     );
 };
