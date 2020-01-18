@@ -31,7 +31,7 @@
         "react-typography": "^0.16.19",
         "styled-components": "^5.0.0",
         "typography": "^0.16.19",
-        "typography-theme-fairy-gates": "^0.16.19"
+        "typography-theme-wordpress-2016": "^0.16.19"
     },
     "devDependencies": {
         "eslint-plugin-prettier": "^3.1.2",
