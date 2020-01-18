@@ -4,11 +4,9 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7);
 `;
 
 export const ProfileWrapper = styled.div`
-    position: absolute;
     display: flex;
     align-items: center;
 
