@@ -47,6 +47,11 @@ const MenuButton = styled.a`
     height: 50px;
     position: relative;
     z-index: 1000;
+    cursor: pointer;
+
+    & span {
+        transition: 0.2s;
+    }
 
     & span,
     & span::before,
@@ -101,10 +106,40 @@ const OverlayMenu = styled.div`
     left: 0;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 300ms ease;
+    transition: opacity 0.3s ease;
     background: rgba(0, 0, 0, 0.95);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     & ul {
+        li {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translate(100px, 0%);
+            /* transition-delay: 0.3s; */
+
+            /* &:nth-child(2) {
+                transition-delay: 0.4s;
+            }
+            &:nth-child(3) {
+                transition-delay: 0.5s;
+            }
+            &:nth-child(4) {
+                transition-delay: 0.6s;
+            }
+            &:nth-child(5) {
+                transition-delay: 0.7s;
+            } */
+
+            a {
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+            }
+        }
     }
 
     ${props =>
@@ -114,12 +149,17 @@ const OverlayMenu = styled.div`
             opacity: 1;
 
             & ul {
+                li {
+                    transform: translate(0%, 0%);
+                    opacity: 1;
+                }
             }
         `}
 `;
 
 const Menu = ({ size, children, fixed }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    console.log('re render');
     return (
         <Container fixed={fixed}>
             <MobileMenu size={size}>
