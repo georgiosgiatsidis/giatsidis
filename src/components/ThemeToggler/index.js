@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
 const Wrapper = styled.div`
     display: inline-flex;
@@ -54,29 +53,30 @@ const LightIcon = styled.span`
     padding-right: 5px;
 `;
 
-const Toggler = () => (
-    <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-            <>
-                <Wrapper>
-                    <Label checked={theme === 'dark'}>
-                        {theme === 'dark' ? (
-                            <DarkIcon>🌙</DarkIcon>
-                        ) : (
-                            <LightIcon>☀️</LightIcon>
-                        )}
-                        <Input
-                            type="checkbox"
-                            onChange={e =>
-                                toggleTheme(e.target.checked ? 'dark' : 'light')
-                            }
-                            checked={theme === 'dark'}
-                        />
-                    </Label>
-                </Wrapper>
-            </>
-        )}
-    </ThemeToggler>
-);
+const Toggler = () => {
+    const [theme, setTheme] = useState(window.__theme);
+
+    return (
+        <Wrapper>
+            <Label checked={theme === 'dark'}>
+                {theme === 'dark' ? (
+                    <DarkIcon>🌙</DarkIcon>
+                ) : (
+                    <LightIcon>☀️</LightIcon>
+                )}
+                <Input
+                    type="checkbox"
+                    onChange={e => {
+                        window.__setPreferredTheme(
+                            e.target.checked ? 'dark' : 'light'
+                        );
+                        setTheme(e.target.checked ? 'dark' : 'light');
+                    }}
+                    checked={theme === 'dark'}
+                />
+            </Label>
+        </Wrapper>
+    );
+};
 
 export default Toggler;
