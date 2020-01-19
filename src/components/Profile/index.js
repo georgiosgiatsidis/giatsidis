@@ -32,20 +32,26 @@ const Profile = () => {
                             title="Email address"
                             href="mailto:georgiosgiatsidis@hotmail.gr"
                         >
-                            <FontAwesomeIcon icon={faEnvelope} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </Styled.Icon>
                         </a>
                         <a
                             target="_blank"
                             href="https://www.linkedin.com/in/georgegiatsidis/"
                         >
-                            <FontAwesomeIcon icon={faLinkedin} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </Styled.Icon>
                         </a>
                         <a
                             title="Github"
                             target="_blank"
                             href="https://github.com/georgiosgiatsidis"
                         >
-                            <FontAwesomeIcon icon={faGithub} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faGithub} />
+                            </Styled.Icon>
                         </a>
                     </p>
                 </Styled.PersonalDetails>

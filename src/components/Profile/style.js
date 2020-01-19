@@ -34,3 +34,7 @@ export const Avater = styled.div`
         box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.5);
     }
 `;
+
+export const Icon = styled.span`
+    color: var(--textLink);
+`;
