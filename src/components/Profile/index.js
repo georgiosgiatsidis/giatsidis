@@ -37,7 +37,9 @@ const Profile = () => {
                             </Styled.Icon>
                         </a>
                         <a
+                            title="LinkedIn"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href="https://www.linkedin.com/in/georgegiatsidis/"
                         >
                             <Styled.Icon>
@@ -47,6 +49,7 @@ const Profile = () => {
                         <a
                             title="Github"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href="https://github.com/georgiosgiatsidis"
                         >
                             <Styled.Icon>
