@@ -8,7 +8,14 @@ import * as Styled from './style';
 const Profile = () => {
     const data = useStaticQuery(graphql`
         query {
-            fileName: file(relativePath: { eq: "avatar.png" }) {
+            avatar: file(relativePath: { eq: "avatar.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            bg: file(relativePath: { eq: "bg.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 1920) {
                         ...GatsbyImageSharpFluid
@@ -19,10 +26,11 @@ const Profile = () => {
     `);
 
     return (
-        <Styled.Wrapper>
+        <Styled.Wrapper bgUrl={data.bg.childImageSharp.fluid.src}>
+            <Styled.Filter />
             <Styled.ProfileWrapper>
                 <Styled.Avater>
-                    <img src={data.fileName.childImageSharp.fluid.src} alt="" />
+                    <img src={data.avatar.childImageSharp.fluid.src} alt="" />
                 </Styled.Avater>
                 <Styled.PersonalDetails>
                     <h1 className="name">Georgios Giatsidis</h1>
