@@ -5,7 +5,7 @@ import Profile from '../components/Profile';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
-    <Layout>
+    <Layout fixed>
         <SEO title="Home" />
         <Profile />
     </Layout>

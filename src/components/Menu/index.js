@@ -12,6 +12,13 @@ const Container = styled.nav`
             margin: 1rem;
         }
     }
+
+    ${props =>
+        props.fixed &&
+        css`
+            z-index: 1000;
+            position: fixed;
+        `}
 `;
 
 const MobileMenu = styled.div`
@@ -85,10 +92,10 @@ const MenuButton = styled.a`
         `}
 `;
 
-const Menu = ({ size, children }) => {
+const Menu = ({ size, children, fixed }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <Container>
+        <Container fixed={fixed}>
             <MobileMenu size={size}>
                 <MenuButton
                     active={isMenuOpen}
@@ -106,10 +113,12 @@ const Menu = ({ size, children }) => {
 Menu.propTypes = {
     size: PropTypes.string,
     children: PropTypes.node,
+    fixed: PropTypes.bool,
 };
 
 Menu.defaultProps = {
     size: '1024px',
+    fixed: false,
 };
 
 export default Menu;
