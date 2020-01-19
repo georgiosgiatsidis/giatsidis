@@ -46,6 +46,7 @@ const MenuButton = styled.a`
     width: 50px;
     height: 50px;
     position: relative;
+    z-index: 1000;
 
     & span,
     & span::before,
@@ -92,6 +93,31 @@ const MenuButton = styled.a`
         `}
 `;
 
+const OverlayMenu = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    background: rgba(0, 0, 0, 0.95);
+
+    & ul {
+    }
+
+    ${props =>
+        props.isMenuOpen &&
+        css`
+            visibility: visible;
+            opacity: 1;
+
+            & ul {
+            }
+        `}
+`;
+
 const Menu = ({ size, children, fixed }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
@@ -103,7 +129,7 @@ const Menu = ({ size, children, fixed }) => {
                 >
                     <span />
                 </MenuButton>
-                {isMenuOpen && <div>{children}</div>}
+                <OverlayMenu isMenuOpen={isMenuOpen}>{children}</OverlayMenu>
             </MobileMenu>
             <DesktopMenu size={size}>{children}</DesktopMenu>
         </Container>

@@ -41,7 +41,7 @@ const Navbar = ({ fixed }) => {
     );
 };
 
-Navbar.propType = {
+Navbar.propTypes = {
     fixed: PropTypes.bool,
 };
 
