@@ -7,7 +7,7 @@ import './global.css';
 
 config.autoAddCss = false;
 
-const Layout = ({ children }) => {
+const Layout = ({ fixed, children }) => {
     return (
         <div
             style={{
@@ -20,14 +20,19 @@ const Layout = ({ children }) => {
                 minHeight: '100vh',
             }}
         >
-            <Navbar />
+            <Navbar fixed={fixed} />
             <main>{children}</main>
         </div>
     );
 };
 
 Layout.propTypes = {
+    fixed: PropTypes.bool,
     children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+    fixed: false,
 };
 
 export default Layout;

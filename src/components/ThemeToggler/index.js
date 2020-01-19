@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
 const Wrapper = styled.div`
-    display: flex;
+    display: inline-flex;
 `;
 
 const Label = styled.label`

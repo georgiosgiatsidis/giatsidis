@@ -8,7 +8,14 @@ import * as Styled from './style';
 const Profile = () => {
     const data = useStaticQuery(graphql`
         query {
-            fileName: file(relativePath: { eq: "avatar.png" }) {
+            avatar: file(relativePath: { eq: "avatar.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1920) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            bg: file(relativePath: { eq: "bg.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 1920) {
                         ...GatsbyImageSharpFluid
@@ -19,10 +26,11 @@ const Profile = () => {
     `);
 
     return (
-        <Styled.Wrapper>
+        <Styled.Wrapper bgUrl={data.bg.childImageSharp.fluid.src}>
+            <Styled.Filter />
             <Styled.ProfileWrapper>
                 <Styled.Avater>
-                    <img src={data.fileName.childImageSharp.fluid.src} alt="" />
+                    <img src={data.avatar.childImageSharp.fluid.src} alt="" />
                 </Styled.Avater>
                 <Styled.PersonalDetails>
                     <h1 className="name">Georgios Giatsidis</h1>
@@ -32,20 +40,29 @@ const Profile = () => {
                             title="Email address"
                             href="mailto:georgiosgiatsidis@hotmail.gr"
                         >
-                            <FontAwesomeIcon icon={faEnvelope} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </Styled.Icon>
                         </a>
                         <a
+                            title="LinkedIn"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href="https://www.linkedin.com/in/georgegiatsidis/"
                         >
-                            <FontAwesomeIcon icon={faLinkedin} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </Styled.Icon>
                         </a>
                         <a
                             title="Github"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href="https://github.com/georgiosgiatsidis"
                         >
-                            <FontAwesomeIcon icon={faGithub} />
+                            <Styled.Icon>
+                                <FontAwesomeIcon icon={faGithub} />
+                            </Styled.Icon>
                         </a>
                     </p>
                 </Styled.PersonalDetails>

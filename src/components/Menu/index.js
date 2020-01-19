@@ -12,6 +12,13 @@ const Container = styled.nav`
             margin: 1rem;
         }
     }
+
+    ${props =>
+        props.fixed &&
+        css`
+            z-index: 1000;
+            position: fixed;
+        `}
 `;
 
 const MobileMenu = styled.div`
@@ -39,6 +46,12 @@ const MenuButton = styled.a`
     width: 50px;
     height: 50px;
     position: relative;
+    z-index: 1000;
+    cursor: pointer;
+
+    & span {
+        transition: 0.2s;
+    }
 
     & span,
     & span::before,
@@ -85,10 +98,70 @@ const MenuButton = styled.a`
         `}
 `;
 
-const Menu = ({ size, children }) => {
+const OverlayMenu = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.95);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & ul {
+        li {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translate(100px, 0%);
+            /* transition-delay: 0.3s; */
+
+            /* &:nth-child(2) {
+                transition-delay: 0.4s;
+            }
+            &:nth-child(3) {
+                transition-delay: 0.5s;
+            }
+            &:nth-child(4) {
+                transition-delay: 0.6s;
+            }
+            &:nth-child(5) {
+                transition-delay: 0.7s;
+            } */
+
+            a {
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    ${props =>
+        props.isMenuOpen &&
+        css`
+            visibility: visible;
+            opacity: 1;
+
+            & ul {
+                li {
+                    transform: translate(0%, 0%);
+                    opacity: 1;
+                }
+            }
+        `}
+`;
+
+const Menu = ({ size, children, fixed }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    console.log('re render');
     return (
-        <Container>
+        <Container fixed={fixed}>
             <MobileMenu size={size}>
                 <MenuButton
                     active={isMenuOpen}
@@ -96,7 +169,7 @@ const Menu = ({ size, children }) => {
                 >
                     <span />
                 </MenuButton>
-                {isMenuOpen && <div>{children}</div>}
+                <OverlayMenu isMenuOpen={isMenuOpen}>{children}</OverlayMenu>
             </MobileMenu>
             <DesktopMenu size={size}>{children}</DesktopMenu>
         </Container>
@@ -106,10 +179,12 @@ const Menu = ({ size, children }) => {
 Menu.propTypes = {
     size: PropTypes.string,
     children: PropTypes.node,
+    fixed: PropTypes.bool,
 };
 
 Menu.defaultProps = {
     size: '1024px',
+    fixed: false,
 };
 
 export default Menu;

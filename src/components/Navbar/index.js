@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Menu from '../Menu';
 import ThemeToggler from '../ThemeToggler';
 
-const Navbar = () => {
+const Navbar = ({ fixed }) => {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -25,7 +26,7 @@ const Navbar = () => {
     const { menuLinks } = site.siteMetadata;
 
     return (
-        <Menu>
+        <Menu fixed={fixed}>
             <ul>
                 {menuLinks.map(link => (
                     <li key={link.name}>
@@ -38,6 +39,14 @@ const Navbar = () => {
             </ul>
         </Menu>
     );
+};
+
+Navbar.propTypes = {
+    fixed: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+    fixed: false,
 };
 
 export default Navbar;
