@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import useTheme from './useTheme';
+import Toggler from './Toggler';
 
 const Wrapper = styled.div`
     display: inline-flex;
@@ -54,26 +54,29 @@ const LightIcon = styled.span`
     padding-right: 5px;
 `;
 
-const Toggler = () => {
-    const [theme, setTheme] = useTheme();
+const ThemeToggler = () => {
     return (
-        <Wrapper>
-            <Label checked={theme === 'dark'}>
-                {theme === 'dark' ? (
-                    <DarkIcon>🌙</DarkIcon>
-                ) : (
-                    <LightIcon>☀️</LightIcon>
-                )}
-                <Input
-                    type="checkbox"
-                    onChange={e =>
-                        setTheme(e.target.checked ? 'dark' : 'light')
-                    }
-                    checked={theme === 'dark'}
-                />
-            </Label>
-        </Wrapper>
+        <Toggler>
+            {({ theme, toggleTheme }) => (
+                <Wrapper>
+                    <Label checked={theme === 'dark'}>
+                        {theme === 'dark' ? (
+                            <DarkIcon>🌙</DarkIcon>
+                        ) : (
+                            <LightIcon>☀️</LightIcon>
+                        )}
+                        <Input
+                            type="checkbox"
+                            onChange={e =>
+                                toggleTheme(e.target.checked ? 'dark' : 'light')
+                            }
+                            checked={theme === 'dark'}
+                        />
+                    </Label>
+                </Wrapper>
+            )}
+        </Toggler>
     );
 };
 
-export default Toggler;
+export default ThemeToggler;
