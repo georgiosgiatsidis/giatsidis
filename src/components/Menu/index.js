@@ -159,7 +159,6 @@ const OverlayMenu = styled.div`
 
 const Menu = ({ size, children, fixed }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    console.log('re render');
     return (
         <Container fixed={fixed}>
             <MobileMenu size={size}>

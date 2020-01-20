@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
+import useTheme from './useTheme';
 
 const Wrapper = styled.div`
     display: inline-flex;
@@ -54,8 +55,7 @@ const LightIcon = styled.span`
 `;
 
 const Toggler = () => {
-    const [theme, setTheme] = useState(window.__theme);
-
+    const [theme, setTheme] = useTheme();
     return (
         <Wrapper>
             <Label checked={theme === 'dark'}>
@@ -66,12 +66,9 @@ const Toggler = () => {
                 )}
                 <Input
                     type="checkbox"
-                    onChange={e => {
-                        window.__setPreferredTheme(
-                            e.target.checked ? 'dark' : 'light'
-                        );
-                        setTheme(e.target.checked ? 'dark' : 'light');
-                    }}
+                    onChange={e =>
+                        setTheme(e.target.checked ? 'dark' : 'light')
+                    }
                     checked={theme === 'dark'}
                 />
             </Label>
