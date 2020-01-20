@@ -108,33 +108,38 @@ const OverlayMenu = styled.div`
     opacity: 0;
     transition: opacity 0.3s ease;
     background: rgba(0, 0, 0, 0.95);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     & ul {
-        li {
+        & li {
             opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translate(100px, 0%);
-            /* transition-delay: 0.3s; */
+            transition: 0.4s opacity, 0.4s transform;
+            transform: translate(100%, 0%);
 
-            /* &:nth-child(2) {
-                transition-delay: 0.4s;
+            &:nth-child(2) {
+                transition-delay: 50ms;
             }
+
             &:nth-child(3) {
-                transition-delay: 0.5s;
+                transition-delay: 100ms;
             }
-            &:nth-child(4) {
-                transition-delay: 0.6s;
-            }
-            &:nth-child(5) {
-                transition-delay: 0.7s;
-            } */
 
-            a {
+            &:nth-child(4) {
+                transition-delay: 150ms;
+            }
+
+            &:nth-child(5) {
+                transition-delay: 200ms;
+            }
+
+            &:nth-child(6) {
+                transition-delay: 250ms;
+            }
+
+            & a {
                 font-weight: 900;
                 text-transform: uppercase;
                 font-size: 1.5rem;
@@ -150,7 +155,7 @@ const OverlayMenu = styled.div`
 
             & ul {
                 li {
-                    transform: translate(0%, 0%);
+                    transform: none;
                     opacity: 1;
                 }
             }
