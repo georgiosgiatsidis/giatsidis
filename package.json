@@ -10,10 +10,10 @@
         "@fortawesome/free-solid-svg-icons": "^5.12.0",
         "@fortawesome/react-fontawesome": "^0.1.8",
         "babel-plugin-styled-components": "^1.10.6",
-        "gatsby": "^2.18.21",
-        "gatsby-image": "^2.2.38",
+        "gatsby": "^2.18.25",
+        "gatsby-image": "^2.2.39",
         "gatsby-plugin-manifest": "^2.2.37",
-        "gatsby-plugin-offline": "^3.0.31",
+        "gatsby-plugin-offline": "^3.0.32",
         "gatsby-plugin-react-helmet": "^3.1.21",
         "gatsby-plugin-sharp": "^2.3.13",
         "gatsby-plugin-styled-components": "^3.1.17",
@@ -21,7 +21,7 @@
         "gatsby-remark-prismjs": "^3.3.30",
         "gatsby-source-filesystem": "^2.1.46",
         "gatsby-transformer-remark": "^2.6.48",
-        "gatsby-transformer-sharp": "^2.3.12",
+        "gatsby-transformer-sharp": "^2.3.13",
         "prismjs": "^1.19.0",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
@@ -34,7 +34,7 @@
     },
     "devDependencies": {
         "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react": "^7.18.0",
         "prettier": "^1.19.1"
     },
     "keywords": [
