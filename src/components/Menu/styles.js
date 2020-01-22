@@ -82,6 +82,11 @@ export const MenuButton = styled.a`
     ${props =>
         props.active &&
         css`
+            & span::before,
+            & span::after {
+                background-color: #fff;
+            }
+
             & span {
                 height: 0;
             }
