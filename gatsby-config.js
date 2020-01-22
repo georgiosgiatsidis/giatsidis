@@ -8,22 +8,6 @@ module.exports = {
                 name: 'home',
                 link: '/',
             },
-            {
-                name: 'page2',
-                link: 'page-2',
-            },
-            {
-                name: 'page3',
-                link: 'page-3',
-            },
-            {
-                name: 'page4',
-                link: 'page-4',
-            },
-            {
-                name: 'page5',
-                link: 'page-5',
-            },
         ],
     },
     plugins: [

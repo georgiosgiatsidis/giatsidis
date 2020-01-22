@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     background-position: center center;
     position: relative;
     background-image: url(${props => props.bgUrl});
+    color: #fff;
 `;
 
 export const Filter = styled.div`
@@ -51,7 +52,7 @@ export const Avater = styled.div`
     & > img {
         width: 100%;
         border-radius: 50%;
-        border: 3px solid var(--textNormal);
+        border: 3px solid #fff;
         box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.5);
     }
 `;
