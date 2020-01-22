@@ -7,13 +7,15 @@ const Wrapper = styled.div`
 `;
 
 const Label = styled.label`
-    cursor: pointer;
+    display: block;
+    position: relative;
     width: 60px;
     height: 30px;
     background: var(--textLink);
-    display: block;
     border-radius: 40px;
-    position: relative;
+    user-select: none;
+    cursor: pointer;
+
     &:after {
         content: '';
         position: absolute;
