@@ -1,5 +1,5 @@
 ---
-path: '/blog/my-first-post'
+path: '/blog/async-foreach-map-in-js'
 date: '2020-01-22'
 title: 'Async forEach , map in Javascript'
 ---
