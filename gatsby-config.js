@@ -5,8 +5,12 @@ module.exports = {
         author: `@georgegiatsidis`,
         menuLinks: [
             {
-                name: 'home',
+                name: 'Home',
                 link: '/',
+            },
+            {
+                name: 'Blog',
+                link: '/blog',
             },
         ],
     },
