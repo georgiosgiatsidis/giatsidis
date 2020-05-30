@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Social from 'components/Social';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -21,6 +22,7 @@ const Layout = ({ fixed, children }) => {
                 minHeight: '100vh',
             }}
         >
+            <Social />
             <Navbar fixed={fixed} />
             <main>{children}</main>
             <Footer />
