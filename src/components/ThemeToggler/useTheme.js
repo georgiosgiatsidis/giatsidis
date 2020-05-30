@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const useTheme = () => {
-    const [theme, setLocalTheme] = useState(window.__theme);
-
-    useEffect(() => {
-        window.__onThemeChange = theme => {
-            setLocalTheme(theme);
-        };
-    }, []);
-
-    function setTheme(theme) {
-        window.__setPreferredTheme(theme);
-        setLocalTheme(theme);
-    }
+    const { theme, setTheme } = useContext(ThemeContext);
 
     return [theme, setTheme];
 };

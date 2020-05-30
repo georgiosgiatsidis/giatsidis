@@ -11,7 +11,7 @@ export const Container = styled.nav`
         }
     }
 
-    ${props =>
+    ${(props) =>
         props.fixed &&
         css`
             z-index: 1000;
@@ -22,7 +22,7 @@ export const Container = styled.nav`
 export const MobileMenu = styled.div`
     display: none;
     text-align: center;
-    @media (max-width: ${props => props.size}) {
+    @media (max-width: ${(props) => props.size}) {
         display: block;
     }
 
@@ -34,7 +34,7 @@ export const MobileMenu = styled.div`
 export const DesktopMenu = styled.div`
     display: block;
     text-align: center;
-    @media (max-width: ${props => props.size}) {
+    @media (max-width: ${(props) => props.size}) {
         display: none;
     }
 `;
@@ -79,7 +79,7 @@ export const MenuButton = styled.a`
         transform: translateY(5px);
     }
 
-    ${props =>
+    ${(props) =>
         props.active &&
         css`
             & span::before,
@@ -150,7 +150,7 @@ export const OverlayMenu = styled.div`
         }
     }
 
-    ${props =>
+    ${(props) =>
         props.isMenuOpen &&
         css`
             visibility: visible;

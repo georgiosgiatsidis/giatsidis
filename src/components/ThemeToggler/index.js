@@ -1,29 +1,27 @@
 import React from 'react';
-import Toggler from './Toggler';
+import useTheme from './useTheme';
 import { Wrapper, Label, Input, LightIcon, DarkIcon } from './styles';
 
 const ThemeToggler = () => {
+    const [theme, setTheme] = useTheme();
+
     return (
-        <Toggler>
-            {({ theme, toggleTheme }) => (
-                <Wrapper>
-                    <Label checked={theme === 'dark'}>
-                        {theme === 'dark' ? (
-                            <DarkIcon>🌙</DarkIcon>
-                        ) : (
-                            <LightIcon>☀️</LightIcon>
-                        )}
-                        <Input
-                            type="checkbox"
-                            onChange={e =>
-                                toggleTheme(e.target.checked ? 'dark' : 'light')
-                            }
-                            checked={theme === 'dark'}
-                        />
-                    </Label>
-                </Wrapper>
-            )}
-        </Toggler>
+        <Wrapper>
+            <Label checked={theme === 'dark'}>
+                {theme === 'dark' ? (
+                    <DarkIcon>🌙</DarkIcon>
+                ) : (
+                    <LightIcon>☀️</LightIcon>
+                )}
+                <Input
+                    type="checkbox"
+                    onChange={(e) =>
+                        setTheme(e.target.checked ? 'dark' : 'light')
+                    }
+                    checked={theme === 'dark'}
+                />
+            </Label>
+        </Wrapper>
     );
 };
 
