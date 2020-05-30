@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { rhythm } from '../utils/typography';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import { rhythm } from 'utils/typography';
+import Layout from 'components/Layout';
+import SEO from 'components/SEO';
 
 class BlogIndexTemplate extends React.Component {
     render() {

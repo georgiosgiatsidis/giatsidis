@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import Menu from '../Menu';
-import ThemeToggler from '../ThemeToggler';
+import Menu from 'components/Menu';
+import ThemeToggler from 'components/ThemeToggler';
 
 const Navbar = ({ fixed }) => {
     const { site } = useStaticQuery(
@@ -28,7 +28,7 @@ const Navbar = ({ fixed }) => {
     return (
         <Menu fixed={fixed}>
             <ul>
-                {menuLinks.map(link => (
+                {menuLinks.map((link) => (
                     <li key={link.name}>
                         <Link to={link.link}>{link.name}</Link>
                     </li>
