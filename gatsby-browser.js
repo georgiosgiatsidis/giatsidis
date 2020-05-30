@@ -4,9 +4,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
 import React from 'react';
-import { ThemeProvider } from './src/context/ThemeContext';
+import { ThemeProvider } from 'context/ThemeContext';
+import 'tailwind/index.css';
+
 export const wrapRootElement = ({ element }) => (
     <ThemeProvider>{element}</ThemeProvider>
 );

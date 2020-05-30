@@ -70,5 +70,6 @@ module.exports = {
             },
         },
         'gatsby-plugin-resolve-src',
+        `gatsby-plugin-postcss`,
     ],
 };
