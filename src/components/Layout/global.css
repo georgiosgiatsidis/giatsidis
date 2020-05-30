@@ -18,19 +18,21 @@ body.light {
     --bg-secondary: rgb(249, 250, 251);
     --textNormal: #222;
     --textTitle: #222;
-    --textLink: #1258d8;
+    --textLink: #5d69f6;
     --inlineCode-bg: rgba(255, 229, 100, 0.2);
     --inlineCode-text: #1a1a1a;
+    --footer-bg: #fff;
 }
 
 body.dark {
-    --bg: #282c35;
+    --bg: #2e3135;
     --bg-secondary: rgb(54, 60, 72);
     --textNormal: rgba(255, 255, 255, 0.88);
     --textTitle: #ffffff;
-    --textLink: #ff1758;
+    --textLink: #e65f78;
     --inlineCode-bg: rgba(115, 124, 153, 0.2);
     --inlineCode-text: #e6e6e6;
+    --footer-bg: #26282b;
 }
 
 /*

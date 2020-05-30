@@ -16,7 +16,7 @@ export const Filter = styled.div`
     transition: all 250ms ease;
 
     &:after {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         content: '';
         display: block;
         height: 100%;
@@ -72,7 +72,7 @@ export const AvatarBorder = styled.div`
         left: 0;
         z-index: -1;
         border-radius: 50%;
-        background: linear-gradient(45deg, #5f1835, #0f2d64);
+        background: linear-gradient(45deg, #e65f78, #5d69f6);
     }
 `;
 
