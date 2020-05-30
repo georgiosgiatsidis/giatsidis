@@ -29,11 +29,16 @@ const Profile = () => {
         <Styled.Wrapper bgUrl={data.bg.childImageSharp.fluid.src}>
             <Styled.Filter />
             <Styled.ProfileWrapper>
-                <Styled.Avater>
-                    <img src={data.avatar.childImageSharp.fluid.src} alt="" />
-                </Styled.Avater>
+                <Styled.AvatarBorder>
+                    <Styled.Avater>
+                        <img
+                            src={data.avatar.childImageSharp.fluid.src}
+                            alt=""
+                        />
+                    </Styled.Avater>
+                </Styled.AvatarBorder>
                 <Styled.PersonalDetails>
-                    <h1 className="name">Georgios Giatsidis</h1>
+                    <h1 className="mt-0 mb-2">Georgios Giatsidis</h1>
                     <p>
                         Software Engineer
                         <a

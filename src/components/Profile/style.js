@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     background-size: cover;
     background-position: center center;
     position: relative;
-    background-image: url(${props => props.bgUrl});
+    background-image: url(${(props) => props.bgUrl});
     color: #fff;
 `;
 
@@ -46,14 +46,33 @@ export const PersonalDetails = styled.div`
 `;
 
 export const Avater = styled.div`
+    display: flex;
     max-width: 150px;
     margin: 0 auto;
 
     & > img {
         width: 100%;
         border-radius: 50%;
-        border: 3px solid #fff;
         box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.5);
+        margin: 0;
+    }
+`;
+
+export const AvatarBorder = styled.div`
+    display: flex;
+    position: relative;
+    padding: 5px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #5f1835, #0f2d64);
     }
 `;
 
