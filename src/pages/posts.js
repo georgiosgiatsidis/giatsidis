@@ -12,7 +12,7 @@ class BlogIndexTemplate extends React.Component {
 
         return (
             <Layout>
-                <SEO title="Blog" />
+                <SEO title="Posts" />
                 <Container>
                     <main>
                         {posts.map(({ node }) => {
