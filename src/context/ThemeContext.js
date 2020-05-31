@@ -9,10 +9,12 @@ try {
     //
 }
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = React.createContext({
+    theme: preferredTheme || 'dark',
+});
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = React.useState();
+    const [theme, setTheme] = React.useState(preferredTheme || 'dark');
 
     React.useEffect(() => {
         if (theme) {
@@ -35,7 +37,7 @@ export const ThemeProvider = ({ children }) => {
     }, []);
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={{ theme: theme, setTheme }}>
             {children}
         </ThemeContext.Provider>
     );
