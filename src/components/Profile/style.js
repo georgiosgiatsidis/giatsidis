@@ -33,12 +33,15 @@ export const ProfileWrapper = styled.div`
     display: flex;
     align-items: center;
     z-index: 2;
+    animation-duration: 1.5s;
+    animation-name: fadeIn;
 
     @media (max-width: 580px) {
         display: block;
         text-align: center;
     }
 `;
+
 export const PersonalDetails = styled.div`
     padding-left: 15px;
 
