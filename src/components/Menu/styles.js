@@ -5,6 +5,7 @@ export const Container = styled.nav`
         list-style: none;
         display: flex;
         padding: 0;
+        margin: 0;
 
         li {
             margin: 1rem;
@@ -16,6 +17,7 @@ export const Container = styled.nav`
         css`
             z-index: 1000;
             position: fixed;
+            width: 100%;
         `}
 `;
 
@@ -32,8 +34,15 @@ export const MobileMenu = styled.div`
 `;
 
 export const DesktopMenu = styled.div`
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & ul {
+        & li {
+        }
+    }
+
     @media (max-width: ${(props) => props.size}) {
         display: none;
     }

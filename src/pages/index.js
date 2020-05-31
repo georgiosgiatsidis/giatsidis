@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Container from 'components/Container';
 import Layout from 'components/Layout';
 import Profile from 'components/Profile';
 import About from 'components/About';
@@ -9,7 +9,9 @@ const IndexPage = () => (
     <Layout fixed>
         <SEO title="Home" />
         <Profile />
-        <About />
+        <Container>
+            <About />
+        </Container>
     </Layout>
 );
 

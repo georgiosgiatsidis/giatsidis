@@ -42,13 +42,21 @@ export const PersonalDetails = styled.div`
     padding-left: 15px;
     & a {
         padding: 5px;
+
+        svg {
+            transition: transform 0.3s;
+        }
+
+        &:hover {
+            svg {
+                transform: scale(1.5);
+            }
+        }
     }
 `;
 
 export const Avater = styled.div`
     display: flex;
-    max-width: 150px;
-    margin: 0 auto;
 
     & > img {
         width: 100%;
@@ -62,6 +70,8 @@ export const AvatarBorder = styled.div`
     display: flex;
     position: relative;
     padding: 5px;
+    max-width: 150px;
+    margin: 0 auto;
 
     &:before {
         content: '';

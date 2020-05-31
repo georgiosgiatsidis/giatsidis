@@ -5,6 +5,7 @@ import {
     faTwitter,
     faInstagram,
     faLinkedin,
+    faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 import { Wrapper } from './styles';
 
@@ -27,8 +28,23 @@ const Social = () => (
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a
+                    title="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/georgegiatsidis/"
+                >
                     <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+            </li>
+            <li>
+                <a
+                    title="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/georgiosgiatsidis"
+                >
+                    <FontAwesomeIcon icon={faGithub} />
                 </a>
             </li>
         </ul>
