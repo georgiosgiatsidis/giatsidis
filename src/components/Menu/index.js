@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {
     Container,
     MobileMenu,
@@ -22,7 +23,10 @@ const Menu = ({ size, children, fixed, scroll }) => {
                 </MenuButton>
                 <OverlayMenu isMenuOpen={isMenuOpen}>{children}</OverlayMenu>
             </MobileMenu>
-            <DesktopMenu size={size}>
+            <DesktopMenu
+                size={size}
+                className={classNames({ 'shadow-md': scroll || !fixed })}
+            >
                 <h3 className="m-4 font-black">G.G.</h3>
                 <nav>{children}</nav>
             </DesktopMenu>

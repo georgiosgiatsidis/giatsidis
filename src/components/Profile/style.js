@@ -40,6 +40,7 @@ export const ProfileWrapper = styled.div`
 `;
 export const PersonalDetails = styled.div`
     padding-left: 15px;
+
     & a {
         padding: 5px;
 
@@ -82,7 +83,17 @@ export const AvatarBorder = styled.div`
         left: 0;
         z-index: -1;
         border-radius: 50%;
-        background: linear-gradient(45deg, #e65f78, #5d69f6);
+        background: linear-gradient(90deg, #e65f78, #5d69f6);
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            -webkit-transform: rotateZ(0deg);
+        }
+        to {
+            -webkit-transform: rotateZ(360deg);
+        }
     }
 `;
 
