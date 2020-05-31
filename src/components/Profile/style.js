@@ -65,6 +65,7 @@ export const Avater = styled.div`
 
     & > img {
         width: 100%;
+        height: 100%;
         border-radius: 50%;
         box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.5);
         margin: 0;
