@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Menu from 'components/Menu';
 import ThemeToggler from 'components/ThemeToggler';
+import { useScrollHandler } from 'hooks/useScrollHandler';
 
 const Navbar = ({ fixed }) => {
+    const scroll = useScrollHandler();
+
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -26,7 +29,7 @@ const Navbar = ({ fixed }) => {
     const { menuLinks } = site.siteMetadata;
 
     return (
-        <Menu fixed={fixed}>
+        <Menu fixed={fixed} scroll={scroll}>
             <ul>
                 {menuLinks.map((link) => (
                     <li key={link.name}>

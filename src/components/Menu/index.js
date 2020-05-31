@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -8,10 +9,10 @@ import {
     DesktopMenu,
 } from './styles';
 
-const Menu = ({ size, children, fixed }) => {
+const Menu = ({ size, children, fixed, scroll }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <Container fixed={fixed}>
+        <Container fixed={fixed} scroll={scroll}>
             <MobileMenu size={size}>
                 <MenuButton
                     active={isMenuOpen}

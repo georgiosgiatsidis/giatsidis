@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.nav`
+    transition: background-color 0.3s;
     & ul {
         list-style: none;
         display: flex;
@@ -18,6 +19,12 @@ export const Container = styled.nav`
             z-index: 1000;
             position: fixed;
             width: 100%;
+        `}
+
+    ${(props) =>
+        props.scroll &&
+        css`
+            background-color: var(--bg);
         `}
 `;
 
