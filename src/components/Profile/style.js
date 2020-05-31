@@ -77,6 +77,7 @@ export const AvatarBorder = styled.div`
     position: relative;
     padding: 5px;
     width: 150px;
+    height: 150px;
     margin: 0 auto;
 
     &:before {
