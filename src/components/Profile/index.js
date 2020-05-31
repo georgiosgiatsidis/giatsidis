@@ -3,9 +3,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import useTheme from 'hooks/useTheme';
 import * as Styled from './style';
 
 const Profile = () => {
+    const [theme] = useTheme();
+
     const data = useStaticQuery(graphql`
         query {
             avatar: file(relativePath: { eq: "avatar.png" }) {
@@ -15,7 +18,7 @@ const Profile = () => {
                     }
                 }
             }
-            bg: file(relativePath: { eq: "bg.png" }) {
+            bg: file(relativePath: { eq: "bg.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 1920) {
                         ...GatsbyImageSharpFluid
@@ -27,7 +30,7 @@ const Profile = () => {
 
     return (
         <Styled.Wrapper bgUrl={data.bg.childImageSharp.fluid.src}>
-            <Styled.Filter />
+            <Styled.Filter dark={theme === 'dark'} />
             <Styled.ProfileWrapper>
                 <Styled.AvatarBorder>
                     <Styled.Avater>

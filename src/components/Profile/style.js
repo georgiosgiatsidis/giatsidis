@@ -16,7 +16,8 @@ export const Filter = styled.div`
     transition: all 250ms ease;
 
     &:after {
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: ${(props) =>
+            props.dark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.2)'};
         content: '';
         display: block;
         height: 100%;

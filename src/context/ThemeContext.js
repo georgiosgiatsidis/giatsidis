@@ -16,7 +16,6 @@ export const ThemeProvider = ({ children }) => {
 
     React.useEffect(() => {
         if (theme) {
-            console.log(theme);
             document.body.className = theme;
             try {
                 localStorage.setItem('theme', theme);

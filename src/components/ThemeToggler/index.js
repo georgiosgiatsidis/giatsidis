@@ -1,5 +1,5 @@
 import React from 'react';
-import useTheme from './useTheme';
+import useTheme from 'hooks/useTheme';
 import { Wrapper, Label, Input, LightIcon, DarkIcon } from './styles';
 
 const ThemeToggler = () => {
