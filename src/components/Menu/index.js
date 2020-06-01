@@ -8,12 +8,16 @@ import {
     MenuButton,
     OverlayMenu,
     DesktopMenu,
-} from './styles';
+} from 'components/Menu/styles';
 
 const Menu = ({ size, children, fixed, scroll }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <Container fixed={fixed} scroll={scroll}>
+        <Container
+            fixed={fixed}
+            scroll={scroll}
+            className={classNames({ 'shadow-md': scroll || !fixed })}
+        >
             <MobileMenu size={size}>
                 <MenuButton
                     active={isMenuOpen}
@@ -23,10 +27,7 @@ const Menu = ({ size, children, fixed, scroll }) => {
                 </MenuButton>
                 <OverlayMenu isMenuOpen={isMenuOpen}>{children}</OverlayMenu>
             </MobileMenu>
-            <DesktopMenu
-                size={size}
-                className={classNames({ 'shadow-md': scroll || !fixed })}
-            >
+            <DesktopMenu size={size}>
                 <h3 className="m-4 font-black">G.G.</h3>
                 <nav>{children}</nav>
             </DesktopMenu>
