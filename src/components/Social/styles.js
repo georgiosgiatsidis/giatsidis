@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     height: 120px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: 2;
     right: 20px;
 
     & ul {
