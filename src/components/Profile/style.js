@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -105,4 +106,8 @@ export const AvatarBorder = styled.div`
 
 export const Icon = styled.span`
     color: var(--textLink);
+`;
+
+export const Image = styled(Img)`
+    border-radius: 50%;
 `;

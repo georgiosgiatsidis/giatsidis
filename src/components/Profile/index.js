@@ -13,8 +13,8 @@ const Profile = () => {
         query {
             avatar: file(relativePath: { eq: "avatar.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid
+                    fixed(width: 140, height: 140) {
+                        ...GatsbyImageSharpFixed
                     }
                 }
             }
@@ -34,9 +34,8 @@ const Profile = () => {
             <Styled.ProfileWrapper>
                 <Styled.AvatarBorder>
                     <Styled.Avater>
-                        <img
-                            src={data.avatar.childImageSharp.fluid.src}
-                            alt=""
+                        <Styled.Image
+                            fixed={data.avatar.childImageSharp.fixed}
                         />
                     </Styled.Avater>
                 </Styled.AvatarBorder>
