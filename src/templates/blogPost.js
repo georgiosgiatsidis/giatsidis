@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import SEO from 'components/SEO';
-
+import './prism.css';
 /*eslint-disable react/prop-types */
 
 export default function BlogPostTemplate({ data }) {

@@ -1,0 +1,208 @@
+.gatsby-highlight {
+    margin: 0 0 1rem;
+    overflow: hidden;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+    color: #f8f8f2;
+    background: none;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+    background: #253238;
+    background: #222;
+}
+/* Big blocks */
+pre[class*='language-'] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+    padding: 0.1em 0.3rem;
+    border-radius: 0.3em;
+    white-space: normal;
+    color: #253238;
+    background-color: #e9e8e8;
+    text-shadow: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: #89ddfd;
+}
+
+.namespace {
+    opacity: 0.7;
+}
+
+.token.property,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #b2ccd6;
+}
+
+.token.tag {
+    color: #f07178;
+}
+
+.token.boolean,
+.token.number {
+    color: #f78661;
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #c3e076;
+}
+
+.token.attr-name {
+    color: #fecb68;
+    font-style: italic;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #89ddfd;
+}
+
+.token.variable {
+    color: #eeffff;
+}
+
+.token.atrule,
+.token.function {
+    color: #82aafc;
+}
+
+.token.attr-value {
+    color: #c4e88d;
+}
+
+.token.keyword {
+    color: #c792ea;
+    color: #e65f78;
+}
+
+.token.regex,
+.token.important {
+    color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.comment,
+.token.keyword {
+    font-style: italic;
+}
+
+/* -- Line-numbers plugin css */
+
+pre.line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+    position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #444;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #555;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+span.gatsby-highlight-code-line {
+    position: relative;
+    display: block;
+}
+span.gatsby-highlight-code-line:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1em;
+    height: 100%;
+    width: calc(100% + 2em);
+    background-color: #bce4f947;
+}
+span.gatsby-highlight-code-line:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    height: 100%;
+    width: 5px;
+    background-color: #8dacbd;
+}
