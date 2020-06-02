@@ -1,0 +1,10 @@
+@media print {
+    nav,
+    footer {
+        display: none;
+    }
+
+    @page {
+        size: 8.5in 12in;
+    }
+}
