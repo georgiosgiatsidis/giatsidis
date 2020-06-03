@@ -21,6 +21,22 @@ export default function HTML(props) {
                     dangerouslySetInnerHTML={{ __html: props.body }}
                 />
                 {props.postBodyComponents}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.intergramId = "339090681";
+                            window.intergramServer = "https://chat.giatsidis.com";
+                            window.intergramCustomizations = {
+                                alwaysUseFloatingButton: true
+                            }
+                        `,
+                    }}
+                />
+                <script
+                    id="intergram"
+                    type="text/javascript"
+                    src="https://chat.giatsidis.com/js/widget.js"
+                ></script>
             </body>
         </html>
     );
