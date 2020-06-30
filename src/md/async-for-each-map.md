@@ -1,8 +1,12 @@
 ---
 path: '/posts/async-foreach-map-in-js'
-date: '2020-01-22'
+date: '2020-06-30'
 title: 'Async forEach , map in Javascript'
 ---
+
+In this post we demonstrate the useage of async functions with Array.map and Array.forEach.
+
+### For each
 
 ```js
 const array = [10, 20, 30, 40];
@@ -18,6 +22,11 @@ const asyncForEach = async () => {
 
 asyncForEach();
 
+```
+### Map
+
+The async version of map just maps every item to a Promise. Then we have to wait for all the promises to resolve using the [Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) function.
+```js
 const asyncMap = async () => {
   return Promise.all(
     array.map(async item => {
