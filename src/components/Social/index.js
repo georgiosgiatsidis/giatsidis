@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faFacebook,
+    // faFacebook,
     faTwitter,
-    faInstagram,
+    // faInstagram,
     faLinkedin,
     faGithub,
 } from '@fortawesome/free-brands-svg-icons';
@@ -12,21 +12,26 @@ import { Wrapper } from './styles';
 const Social = () => (
     <Wrapper>
         <ul>
-            <li>
+            {/* <li>
                 <a href="#">
                     <FontAwesomeIcon icon={faFacebook} />
                 </a>
-            </li>
+            </li> */}
             <li>
-                <a href="#">
+                <a
+                    title="Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/georgegiatsidis"
+                >
                     <FontAwesomeIcon icon={faTwitter} />
                 </a>
             </li>
-            <li>
+            {/* <li>
                 <a href="#">
                     <FontAwesomeIcon icon={faInstagram} />
                 </a>
-            </li>
+            </li> */}
             <li>
                 <a
                     title="LinkedIn"
