@@ -18,7 +18,7 @@ const Profile = () => {
                     }
                 }
             }
-            bg: file(relativePath: { eq: "bg.jpg" }) {
+            bg: file(relativePath: { eq: "skg2.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 1920) {
                         ...GatsbyImageSharpFluid
@@ -42,7 +42,7 @@ const Profile = () => {
                 <Styled.PersonalDetails>
                     <h1 className="mt-0 mb-2">Georgios Giatsidis</h1>
                     <p>
-                        Software Engineer
+                        Software Engineer &bull; Thessaloniki
                         <a
                             title="Email address"
                             href="mailto:georgiosgiatsidis@hotmail.gr"

@@ -47,6 +47,9 @@ export const DesktopMenu = styled.div`
 
     & ul {
         & li {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-weight: 900;
         }
     }
 
@@ -162,6 +165,7 @@ export const OverlayMenu = styled.div`
                 font-weight: 900;
                 text-transform: uppercase;
                 font-size: 1.5rem;
+                font-weight: 900;
             }
         }
     }
