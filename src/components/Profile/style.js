@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
     background-position: center center;
     position: relative;
     background-image: url(${(props) => props.bgUrl});
-    color: #fff;
 `;
 
 export const Filter = styled.div`
@@ -18,7 +17,7 @@ export const Filter = styled.div`
 
     &:after {
         background-color: ${(props) =>
-            props.dark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.2)'};
+            props.dark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(127, 127, 127, 0.3)'};
         content: '';
         display: block;
         height: 100%;

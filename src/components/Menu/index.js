@@ -28,7 +28,7 @@ const Menu = ({ size, children, fixed, scroll }) => {
                 <OverlayMenu isMenuOpen={isMenuOpen}>{children}</OverlayMenu>
             </MobileMenu>
             <DesktopMenu size={size}>
-                <h3 className="m-4 font-black">G.G.</h3>
+                <h3 className="m-4 font-black"></h3>
                 <nav>{children}</nav>
             </DesktopMenu>
         </Container>
