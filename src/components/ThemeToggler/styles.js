@@ -26,7 +26,7 @@ export const Label = styled.label`
         transition: left 250ms ease;
     }
 
-    ${props =>
+    ${(props) =>
         props.checked &&
         css`
             &:after {
