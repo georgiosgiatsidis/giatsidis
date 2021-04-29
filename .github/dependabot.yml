@@ -1,0 +1,40 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "03:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - georgiosgiatsidis
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: ssri
+    versions:
+    - 6.0.2
+  - dependency-name: gatsby
+    versions:
+    - 2.31.1
+    - 2.32.10
+    - 2.32.8
+  - dependency-name: gatsby-plugin-styled-components
+    versions:
+    - 3.10.0
+    - 3.9.0
+  - dependency-name: gatsby-plugin-sharp
+    versions:
+    - 2.13.4
+  - dependency-name: gatsby-plugin-react-helmet
+    versions:
+    - 3.9.0
+  - dependency-name: gatsby-plugin-offline
+    versions:
+    - 3.9.0
+  - dependency-name: gatsby-source-filesystem
+    versions:
+    - 2.10.0
+  - dependency-name: gatsby-plugin-typography
+    versions:
+    - 2.11.0
