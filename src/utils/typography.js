@@ -6,9 +6,16 @@ wordpress2016Theme.overrideThemeStyles = () => ({
         color: 'var(--textLink)',
         boxShadow: 'none',
     },
+    h1: {
+        fontFamily: 'Bookman Old Style',
+    },
 });
 
-// delete wordpress2016Theme.googleFonts;
+wordpress2016Theme.headerFontFamily = ['Bookman Old Style', 'sans-serif'];
+wordpress2016Theme.bodyFontFamily = ['Bookman Old Style', 'sans-serif'];
+console.log(wordpress2016Theme);
+
+delete wordpress2016Theme.googleFonts;
 const typography = new Typography(wordpress2016Theme);
 
 export const { scale, rhythm, options } = typography;
