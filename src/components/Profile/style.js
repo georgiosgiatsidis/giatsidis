@@ -109,4 +109,6 @@ export const Icon = styled.span`
 
 export const Image = styled(GatsbyImage)`
     border-radius: 50%;
+    position: relative;
+    z-index: 0;
 `;
