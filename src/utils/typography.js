@@ -13,7 +13,6 @@ wordpress2016Theme.overrideThemeStyles = () => ({
 
 wordpress2016Theme.headerFontFamily = ['Bookman Old Style', 'sans-serif'];
 wordpress2016Theme.bodyFontFamily = ['Bookman Old Style', 'sans-serif'];
-console.log(wordpress2016Theme);
 
 delete wordpress2016Theme.googleFonts;
 const typography = new Typography(wordpress2016Theme);

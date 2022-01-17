@@ -13,29 +13,27 @@ const Profile = () => {
         query {
             avatar: file(relativePath: { eq: "avatar.jpg" }) {
                 childImageSharp {
-                    fixed(width: 140, height: 140) {
-                        ...GatsbyImageSharpFixed
-                    }
+                    gatsbyImageData(layout: FIXED, width: 140, height: 140)
                 }
             }
             bg: file(relativePath: { eq: "skg2.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH)
                 }
             }
         }
     `);
 
     return (
-        <Styled.Wrapper bgUrl={data.bg.childImageSharp.fluid.src}>
+        <Styled.Wrapper
+            bgUrl={data.bg.childImageSharp.gatsbyImageData.images.fallback.src}
+        >
             <Styled.Filter dark={theme === 'dark'} />
             <Styled.ProfileWrapper>
                 <Styled.AvatarBorder>
                     <Styled.Avater>
                         <Styled.Image
-                            fixed={data.avatar.childImageSharp.fixed}
+                            image={data.avatar.childImageSharp.gatsbyImageData}
                         />
                     </Styled.Avater>
                 </Styled.AvatarBorder>

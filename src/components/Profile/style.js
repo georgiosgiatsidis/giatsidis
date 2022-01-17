@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -107,6 +107,6 @@ export const Icon = styled.span`
     color: var(--textLink);
 `;
 
-export const Image = styled(Img)`
+export const Image = styled(GatsbyImage)`
     border-radius: 50%;
 `;
